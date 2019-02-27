@@ -5,6 +5,7 @@ const server = express()
 const PORT = 8080
 
 server.use(express.json())
+server.use(cors())
 
 server.get("/api/users", (req, res) => {
   db.find()
