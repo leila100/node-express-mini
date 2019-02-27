@@ -1,11 +1,15 @@
 import React, { Component } from "react"
-import "./App.css"
+import { Route } from "react-router-dom"
+
+import Navbar from "./components/Navbar"
+import UsersList from "./containers/UsersList"
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>Users app</h1>
+      <div>
+        <Navbar />
+        <Route path="/" component={UsersList} />
       </div>
     )
   }
