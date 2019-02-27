@@ -148,3 +148,14 @@ html {
 a {
   text-decoration: none;
 }
+
+.modal-header {
+  font-size: 2rem;
+  color: #3f0122;
+  font-weight: 700;
+  background-color: #33ccff;
+}
+
+.modal button {
+  font-size: 1.5rem;
+}

@@ -18,12 +18,24 @@ export const UserWrapper = styled.div`
   padding: 10px;
   margin: 3%;
 
-  div {
-    margin-bottom: 10px;
+  span {
+    font-size: 2rem;
+    color: #33ccff;
+  }
+`
 
-    span {
-      font-size: 2rem;
-      color: #33ccff;
-    }
+export const Info = styled.div`
+  margin-bottom: 10px;
+`
+
+export const IconWrapper = styled.div`
+  display: flex;
+  width: 20%;
+  margin-bottom: 0;
+
+  i {
+    margin: 10px;
+    color: #33ccff;
+    cursor: pointer;
   }
 `

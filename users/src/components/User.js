@@ -1,16 +1,23 @@
 import React from "react"
 
-import { UserWrapper } from "../styles/UserStyles"
+import { UserWrapper, IconWrapper, Info } from "../styles/UserStyles"
 
 const User = props => {
   return (
     <UserWrapper>
-      <div>
+      <Info>
         <span>Username:</span> {props.user.name}{" "}
-      </div>
-      <div>
+      </Info>
+      <Info>
         <span>User Bio:</span> {props.user.bio}{" "}
-      </div>
+      </Info>
+      <IconWrapper>
+        <i
+          className="fas fa-user-times"
+          onClick={() => props.toggle(props.user.id, props.user.name)}
+        />
+        <i className="fas fa-user-edit" />
+      </IconWrapper>
     </UserWrapper>
   )
 }
