@@ -149,6 +149,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .modal-header {
   font-size: 2rem;
   color: #3f0122;
@@ -157,5 +161,29 @@ a {
 }
 
 .modal button {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #3f0122;
+  outline: none;
+  border: none;
+  width: 40%;
+}
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: linear-gradient(to bottom, #33ccff 0%, #3f0122 100%);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #33ccff;
+}
+
+.modal-footer {
+  justify-content: center;
 }

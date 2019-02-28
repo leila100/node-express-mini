@@ -11,8 +11,10 @@ const Navbar = () => {
         <span>Users App</span>
       </AppIcon>
       <Links>
-        <NavLink to="/">Users</NavLink>
-        <NavLink to="/">Add User</NavLink>
+        <NavLink exact to="/">
+          Users
+        </NavLink>
+        <NavLink to="/add">Add User</NavLink>
       </Links>
     </NavbarWrapper>
   )
