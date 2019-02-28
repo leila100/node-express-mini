@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
+import Zoom from "react-reveal/Zoom"
 
 import { Form, Button } from "../styles/formStyles"
 
@@ -49,7 +50,7 @@ class UserForm extends Component {
 
   render() {
     return (
-      <div>
+      <Zoom>
         <h1>Add a new user</h1>
         <Form onSubmit={this.action}>
           <input
@@ -68,7 +69,7 @@ class UserForm extends Component {
           />
           <Button color="primary">{this.props.actionType} User</Button>
         </Form>
-      </div>
+      </Zoom>
     )
   }
 }

@@ -18,6 +18,7 @@ export const UserWrapper = styled.div`
   font-size: 1.8rem;
   padding: 10px;
   margin: 3%;
+  height: 100%;
 `
 
 export const Info = styled.div`

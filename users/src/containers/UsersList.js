@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Button, Modal, ModalHeader, ModalFooter } from "reactstrap"
+import Zoom from "react-reveal/Zoom"
 
 import User from "../components/User"
 import { UsersWrapper } from "../styles/UserStyles"
@@ -31,16 +32,18 @@ class UsersList extends Component {
   render() {
     return (
       <>
-        <UsersWrapper>
-          {this.props.users.map(user => (
-            <User
-              user={user}
-              key={user.id}
-              toggle={this.toggle}
-              history={this.props.history}
-            />
-          ))}
-        </UsersWrapper>
+        <Zoom>
+          <UsersWrapper>
+            {this.props.users.map(user => (
+              <User
+                user={user}
+                key={user.id}
+                toggle={this.toggle}
+                history={this.props.history}
+              />
+            ))}
+          </UsersWrapper>
+        </Zoom>
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
