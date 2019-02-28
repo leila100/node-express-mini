@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import axios from "axios"
 
 import { Form, Button } from "../styles/formStyles"
 
@@ -13,6 +14,21 @@ class UserForm extends Component {
     }
   }
 
+  componentDidMount = () => {
+    const { id } = this.props.match.params
+    if (id) this.getUser(id)
+  }
+
+  getUser = id => {
+    const endpoint = `http://localhost:8080/api/users/${id}`
+    axios
+      .get(endpoint)
+      .then(response => {
+        this.setState({ userInfo: response.data })
+      })
+      .catch(err => console.log(err))
+  }
+
   saveInput = event => {
     const newInfo = { ...this.state.userInfo }
     newInfo[event.target.name] = event.target.value
@@ -23,6 +39,12 @@ class UserForm extends Component {
     event.preventDefault()
     if (this.props.actionType === "Add")
       this.props.addUser(this.state.userInfo, this.props.history)
+    else if (this.props.actionType === "Update")
+      this.props.updateUser(
+        this.state.userInfo,
+        this.props.match.params.id,
+        this.props.history
+      )
   }
 
   render() {

@@ -20,7 +20,7 @@ export const Form = styled.form`
     border-radius: 5px;
     outline: none;
 
-    :hover {
+    :focus {
       border: 2px solid #3f0122;
     }
   }

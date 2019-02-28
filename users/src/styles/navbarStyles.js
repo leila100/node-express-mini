@@ -32,6 +32,7 @@ export const AppIcon = styled.div`
 `
 
 export const Links = styled(Flex)`
+  justify-content: space-evenly;
   width: 30%;
   font-size: 2rem;
 

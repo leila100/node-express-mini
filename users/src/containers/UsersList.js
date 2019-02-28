@@ -33,7 +33,12 @@ class UsersList extends Component {
       <>
         <UsersWrapper>
           {this.props.users.map(user => (
-            <User user={user} key={user.id} toggle={this.toggle} />
+            <User
+              user={user}
+              key={user.id}
+              toggle={this.toggle}
+              history={this.props.history}
+            />
           ))}
         </UsersWrapper>
         <Modal

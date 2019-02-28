@@ -8,7 +8,8 @@ import UserForm from "./components/UserForm"
 
 class App extends Component {
   state = {
-    users: []
+    users: [],
+    currentUser: {}
   }
 
   componentDidMount = () => {
@@ -46,6 +47,17 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  updateUserHandler = (user, id, history) => {
+    const endpoint = `http://localhost:8080/api/users/${id}`
+    axios
+      .put(endpoint, user)
+      .then(response => {
+        this.fetchUsers()
+        history.push("/")
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div>
@@ -53,11 +65,16 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => (
-            <UsersList users={this.state.users} delete={this.deleteHandler} />
+          render={props => (
+            <UsersList
+              {...props}
+              users={this.state.users}
+              delete={this.deleteHandler}
+            />
           )}
         />
         <Route
+          exact
           path="/add"
           render={props => (
             <UserForm
@@ -65,6 +82,17 @@ class App extends Component {
               users={this.state.users}
               actionType="Add"
               addUser={this.addUserHandler}
+            />
+          )}
+        />
+        <Route
+          path="/update/:id"
+          render={props => (
+            <UserForm
+              {...props}
+              users={this.state.users}
+              actionType="Update"
+              updateUser={this.updateUserHandler}
             />
           )}
         />
