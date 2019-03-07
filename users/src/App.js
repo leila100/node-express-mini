@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import axios from "axios"
 
 import Navbar from "./components/Navbar"
@@ -62,40 +62,45 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <Route
-          exact
-          path="/"
-          render={props => (
-            <UsersList
-              {...props}
-              users={this.state.users}
-              delete={this.deleteHandler}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/add"
-          render={props => (
-            <UserForm
-              {...props}
-              users={this.state.users}
-              actionType="Add"
-              addUser={this.addUserHandler}
-            />
-          )}
-        />
-        <Route
-          path="/update/:id"
-          render={props => (
-            <UserForm
-              {...props}
-              users={this.state.users}
-              actionType="Update"
-              updateUser={this.updateUserHandler}
-            />
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <UsersList
+                {...props}
+                users={this.state.users}
+                delete={this.deleteHandler}
+              />
+            )}
+            key="home"
+          />
+          <Route
+            exact
+            path="/add"
+            render={props => (
+              <UserForm
+                {...props}
+                users={this.state.users}
+                actionType="Add"
+                addUser={this.addUserHandler}
+              />
+            )}
+            key="add"
+          />
+          <Route
+            path="/update/:id"
+            render={props => (
+              <UserForm
+                {...props}
+                users={this.state.users}
+                actionType="Update"
+                updateUser={this.updateUserHandler}
+              />
+            )}
+            key="update"
+          />
+        </Switch>
       </div>
     )
   }

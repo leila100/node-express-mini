@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Button, Modal, ModalHeader, ModalFooter } from "reactstrap"
-import Zoom from "react-reveal/Zoom"
+import Fade from "react-reveal/Fade"
 
 import User from "../components/User"
 import { UsersWrapper } from "../styles/UserStyles"
@@ -32,7 +32,7 @@ class UsersList extends Component {
   render() {
     return (
       <>
-        <Zoom>
+        <Fade up cascade>
           <UsersWrapper>
             {this.props.users.map(user => (
               <User
@@ -43,7 +43,7 @@ class UsersList extends Component {
               />
             ))}
           </UsersWrapper>
-        </Zoom>
+        </Fade>
         <Modal
           isOpen={this.state.modal}
           toggle={this.toggle}
