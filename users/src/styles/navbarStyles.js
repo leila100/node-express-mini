@@ -13,6 +13,7 @@ export const NavbarWrapper = styled(Flex)`
   left: 0;
   border-bottom: 1px solid #3f0122;
   background-color: black;
+  z-index: 5;
 `
 
 export const AppIcon = styled.div`
