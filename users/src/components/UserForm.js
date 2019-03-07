@@ -21,7 +21,7 @@ class UserForm extends Component {
   }
 
   getUser = id => {
-    const endpoint = `http://localhost:8080/api/users/${id}`
+    const endpoint = `https://api-users-leila.herokuapp.com/api/users/${id}`
     axios
       .get(endpoint)
       .then(response => {

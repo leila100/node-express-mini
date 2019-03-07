@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   fetchUsers = () => {
-    const endpoint = "http://localhost:8080/api/users"
+    const endpoint = "https://api-users-leila.herokuapp.com/api/users"
     axios
       .get(endpoint)
       .then(response => {
@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   deleteHandler = userId => {
-    const endpoint = `http://localhost:8080/api/users/${userId}`
+    const endpoint = `https://api-users-leila.herokuapp.com/api/users/${userId}`
     axios
       .delete(endpoint)
       .then(response => {
@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   addUserHandler = (user, history) => {
-    const endpoint = "http://localhost:8080/api/users"
+    const endpoint = "https://api-users-leila.herokuapp.com/api/users"
     axios
       .post(endpoint, user)
       .then(response => {
@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   updateUserHandler = (user, id, history) => {
-    const endpoint = `http://localhost:8080/api/users/${id}`
+    const endpoint = `https://api-users-leila.herokuapp.com/api/users/${id}`
     axios
       .put(endpoint, user)
       .then(response => {
